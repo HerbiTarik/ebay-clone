@@ -2,6 +2,7 @@ import { View, Image, StyleSheet } from 'react-native'
 import React from 'react'
 import { Feather } from '@expo/vector-icons'
 import ebayLogoNav from '../assets/ebayLogoNav.jpg'
+import { color } from '../utils/colors'
 
 const Navbar = () => {
     return (
@@ -10,7 +11,7 @@ const Navbar = () => {
                 <Feather
                     name="menu"
                     size={25}
-                    color="black"
+                    color="white"
                     style={styles.menu}
                 />
                 <Image source={ebayLogoNav} style={styles.image} />
@@ -18,7 +19,7 @@ const Navbar = () => {
             <Feather
                 name="shopping-cart"
                 size={25}
-                color="black"
+                color="white"
                 style={styles.shopping}
             />
         </View>
@@ -39,18 +40,18 @@ const styles = StyleSheet.create({
     },
     menu: {
         padding: 8,
-        backgroundColor: '#191919',
+        backgroundColor: color.secondary,
         borderRadius: 50,
         color: 'white',
     },
     image: {
-        width: 90,
-        height: 40,
+        width: 80,
+        height: 30,
         marginLeft: 20,
     },
     shopping: {
         padding: 8,
-        backgroundColor: '#191919',
+        backgroundColor: color.secondary,
         borderRadius: 50,
         color: 'white',
     },
