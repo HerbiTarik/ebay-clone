@@ -8,6 +8,7 @@ import Navbar from './components/Navbar'
 import { SafeAreaView } from 'react-native-safe-area-context'
 import { color } from './utils/colors'
 import SearchBar from './components/SearchBar'
+import Menu from './components/Menu'
 
 export default function App() {
     const [appIsReady, setAppIsReady] = useState(false)
@@ -18,6 +19,7 @@ export default function App() {
                 <StatusBar style="light" />
                 <Navbar />
                 <SearchBar />
+                <Menu />
             </SafeAreaView>
         </>
     )
