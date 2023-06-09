@@ -1,7 +1,6 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native'
 import { AntDesign, Ionicons, SimpleLineIcons } from '@expo/vector-icons'
 import { color } from '../utils/colors'
-import { useRef } from 'react'
 
 const SearchBar = () => {
     return (
@@ -26,7 +25,7 @@ const SearchBar = () => {
                     pressed && styles.activePressable,
                 ]}
             >
-                <Ionicons name="mic-outline" size={24} color="white" />
+                <Ionicons name="mic-outline" size={28} color="white" />
             </Pressable>
             <Pressable
                 style={({ pressed }) => [
@@ -88,7 +87,7 @@ const styles = StyleSheet.create({
     },
     activePressable: {
         opacity: 0.8,
-        backgroundColor: 'gray',
+        backgroundColor: color.grey,
     },
 })
 
