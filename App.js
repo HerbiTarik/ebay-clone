@@ -9,7 +9,8 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { color } from './utils/colors'
 import SearchBar from './components/SearchBar'
 import Menu from './components/Menu'
-
+import Connection from './components/Connection'
+import Product from './components/Product'
 export default function App() {
     const [appIsReady, setAppIsReady] = useState(false)
 
@@ -20,6 +21,8 @@ export default function App() {
                 <Navbar />
                 <SearchBar />
                 <Menu />
+                <Connection />
+                <Product />
             </SafeAreaView>
         </>
     )
