@@ -1,6 +1,14 @@
-import { View, Text, Image, Pressable, StyleSheet } from 'react-native'
+import {
+    View,
+    Text,
+    Image,
+    Pressable,
+    StyleSheet,
+    FlatList,
+} from 'react-native'
 import React from 'react'
 import { color } from '../utils/colors'
+import { products } from '../utils/products'
 
 const product = () => {
     return (
@@ -11,11 +19,32 @@ const product = () => {
                     <Text style={styles.show}>Tout afficher</Text>
                 </Pressable>
             </View>
-            <Pressable style={styles.contenent}>
-                <Image style={styles.image} />
-                <Text style={styles.description}></Text>
-                <Text style={styles.price}></Text>
-            </Pressable>
+            {/* {products.map((prod) => ( */}
+            <FlatList
+                style={styles.flatlist}
+                data={products}
+                renderItem={({ item }) => (
+                    <Pressable style={styles.content}>
+                        <Image
+                            style={styles.image}
+                            source={{
+                                uri: item.uri,
+                            }}
+                        />
+                        <Text
+                            style={styles.description}
+                            numberOfLines={3}
+                            ellipsizeMode="tail"
+                        >
+                            {item.description}
+                        </Text>
+                        <Text style={styles.price}>DZD{item.price}</Text>
+                    </Pressable>
+                )}
+                keyExtractor={(item) => item.id}
+                horizontal
+            />
+            {/* ))} */}
         </View>
     )
 }
@@ -39,6 +68,33 @@ const styles = StyleSheet.create({
         color: color.text,
         fontSize: 14.5,
         textDecorationLine: 'underline',
+    },
+    flatlist: {
+        marginVertical: 20,
+        marginHorizontal: 11,
+    },
+    image: {
+        width: '100%',
+        height: 150,
+        resizeMode: 'center',
+        backgroundColor: color.white,
+        borderRadius: 15,
+    },
+    content: {
+        width: 150,
+        height: 'auto',
+        marginHorizontal: 4,
+    },
+    description: {
+        marginVertical: 6,
+        color: color.text,
+        fontSize: 16,
+        lineHeight: 22,
+    },
+    price: {
+        color: color.text,
+        fontWeight: 'bold',
+        fontSize: 21,
     },
 })
 export default product
