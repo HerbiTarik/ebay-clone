@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         rowGap: 25,
         columnGap: 8,
         justifyContent: 'center',
-        marginVertical: 20,
+        marginTop: 20,
     },
     pressable: {},
     image: {
