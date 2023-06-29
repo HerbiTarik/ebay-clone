@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar'
-import { StyleSheet } from 'react-native'
+import { ScrollView, StyleSheet } from 'react-native'
 import { useCallback, useEffect, useState } from 'react'
 import Entypo from '@expo/vector-icons/Entypo'
 import * as SplashScreen from 'expo-splash-screen'
@@ -11,18 +11,22 @@ import SearchBar from './components/SearchBar'
 import Menu from './components/Menu'
 import Connection from './components/Connection'
 import Product from './components/Product'
+import Categorie from './components/Categorie'
 export default function App() {
     const [appIsReady, setAppIsReady] = useState(false)
 
     return (
         <>
             <SafeAreaView style={styles.container}>
-                <StatusBar style="light" />
-                <Navbar />
-                <SearchBar />
-                <Menu />
-                <Connection />
-                <Product />
+                <ScrollView>
+                    <StatusBar style="light" />
+                    <Navbar />
+                    <SearchBar />
+                    <Menu />
+                    <Connection />
+                    <Product />
+                    <Categorie />
+                </ScrollView>
             </SafeAreaView>
         </>
     )

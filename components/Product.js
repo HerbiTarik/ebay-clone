@@ -24,7 +24,12 @@ const product = () => {
                 style={styles.flatlist}
                 data={products}
                 renderItem={({ item }) => (
-                    <Pressable style={styles.content}>
+                    <Pressable
+                        style={({ pressed }) => [
+                            styles.content,
+                            pressed && styles.pressed,
+                        ]}
+                    >
                         <Image
                             style={styles.image}
                             source={{
@@ -51,7 +56,7 @@ const product = () => {
 const styles = StyleSheet.create({
     container: {
         marginHorizontal: 5,
-        marginVertical: 20,
+        marginVertical: 12,
     },
     titleShow: {
         flexDirection: 'row',
@@ -70,7 +75,7 @@ const styles = StyleSheet.create({
         textDecorationLine: 'underline',
     },
     flatlist: {
-        marginVertical: 20,
+        marginVertical: 15,
         marginHorizontal: 11,
     },
     image: {
@@ -84,6 +89,9 @@ const styles = StyleSheet.create({
         width: 150,
         height: 'auto',
         marginHorizontal: 4,
+    },
+    pressed: {
+        backgroundColor: color.grey2,
     },
     description: {
         marginVertical: 6,
