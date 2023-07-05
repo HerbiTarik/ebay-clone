@@ -1,19 +1,23 @@
-import { View, Image, StyleSheet } from 'react-native'
+import { View, Image, StyleSheet, Pressable } from 'react-native'
 import React from 'react'
 import { Feather } from '@expo/vector-icons'
 import ebayLogoNav from '../assets/ebayLogoNav.jpg'
 import { color } from '../utils/colors'
+import { useNavigation } from '@react-navigation/native'
 
 const Navbar = () => {
+    const navigation = useNavigation()
     return (
         <View style={styles.container}>
             <View style={styles.menuImage}>
-                <Feather
-                    name="menu"
-                    size={25}
-                    color="white"
-                    style={styles.menu}
-                />
+                <Pressable onPress={() => navigation.openDrawer()}>
+                    <Feather
+                        name="menu"
+                        size={25}
+                        color="white"
+                        style={styles.menu}
+                    />
+                </Pressable>
                 <Image source={ebayLogoNav} style={styles.image} />
             </View>
             <Feather

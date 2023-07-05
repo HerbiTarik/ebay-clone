@@ -11,7 +11,14 @@ import { SafeAreaView } from 'react-native-safe-area-context'
 import { color } from '../utils/colors'
 import { StatusBar } from 'expo-status-bar'
 
-const Accueil = () => {
+const Accueil = ({ navigation }) => {
+    const drawerFunction = () => {
+        try {
+            navigation.openDrawer()
+        } catch (e) {
+            console.log(e)
+        }
+    }
     return (
         <>
             <SafeAreaView style={styles.container}>
