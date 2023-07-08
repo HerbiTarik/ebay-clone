@@ -29,7 +29,7 @@ export default function App() {
                 screenOptions={{
                     headerShown: false,
                     drawerStyle: {
-                        // backgroundColor: color.primary,
+                        backgroundColor: color.primary,
                     },
                 }}
                 drawerContent={(props) => <DrawerContent {...props} />}

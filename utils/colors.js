@@ -9,4 +9,5 @@ export const color = {
     blue: '#3375ff',
     clickBlue: '#00008B',
     carbone: '#130E0A',
+    drawerTextColor: '#707070',
 }
