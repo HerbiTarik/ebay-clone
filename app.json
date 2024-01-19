@@ -1,0 +1,16 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "splash": {
+      "image": "./assets/ebayLogo.jpg",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "plugins": ["expo-router"],
+    "name": "clone-ebay",
+    "slug": "clone-ebay"
+  }
+}
